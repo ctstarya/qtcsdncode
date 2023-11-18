@@ -1,0 +1,55 @@
+#include <QApplication>
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QCheckBox>
+
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+
+    QWidget window;
+    QVBoxLayout *layout = new QVBoxLayout(&window);
+
+    // 创建九个 QCheckBox，并为每个 QCheckBox 设置不同的选择器类型的样式
+
+    QCheckBox *checkbox1 = new QCheckBox("样本复选框");
+    checkbox1->setStyleSheet("QCheckBox::indicator { background-color: blue; }");
+    layout->addWidget(checkbox1);
+
+    QCheckBox *checkbox2 = new QCheckBox("样本复选框");
+    checkbox2->setStyleSheet("QCheckBox::indicator:checked { background-color: green; }");
+    layout->addWidget(checkbox2);
+
+    QCheckBox *checkbox3 = new QCheckBox("样本复选框");
+    checkbox3->setStyleSheet("QCheckBox::indicator:unchecked { background-color: red; }");
+    layout->addWidget(checkbox3);
+
+    QCheckBox *checkbox4 = new QCheckBox("样本复选框");
+    checkbox4->setStyleSheet("QCheckBox::indicator:indeterminate { background-color: purple; }");
+    layout->addWidget(checkbox4);
+
+    QCheckBox *checkbox5 = new QCheckBox("样本复选框");
+    checkbox5->setStyleSheet("QCheckBox::indicator:focus { background-color: orange; }");
+    layout->addWidget(checkbox5);
+
+    QCheckBox *checkbox6 = new QCheckBox("样本复选框");
+    checkbox6->setStyleSheet("QCheckBox::indicator:hover { background-color: cyan; }");
+    layout->addWidget(checkbox6);
+
+    QCheckBox *checkbox7 = new QCheckBox("样本复选框");
+    checkbox7->setStyleSheet("QCheckBox::indicator:pressed { background-color: yellow; }");
+    layout->addWidget(checkbox7);
+
+    QCheckBox *checkbox8 = new QCheckBox("样本复选框");
+    checkbox8->setStyleSheet("QCheckBox::indicator:on { background-color: magenta; }");
+    layout->addWidget(checkbox8);
+
+    QCheckBox *checkbox9 = new QCheckBox("样本复选框");
+    checkbox9->setStyleSheet("QCheckBox::indicator:off { background-color: black; }");
+    layout->addWidget(checkbox9);
+
+    window.setLayout(layout);
+    window.setWindowTitle("QCheckBox 样式表选择器");
+    window.show();
+
+    return app.exec();
+}
